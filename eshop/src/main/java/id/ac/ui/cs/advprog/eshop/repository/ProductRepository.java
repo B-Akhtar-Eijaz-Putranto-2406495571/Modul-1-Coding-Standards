@@ -41,4 +41,12 @@ public class ProductRepository {
         }
         return null;
     }
+
+    public Product delete(UUID id) {
+        Product product = findById(id);
+        if (product != null) {
+            productData.remove(product);
+        }
+        return product;
+    }
 }
